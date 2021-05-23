@@ -1,4 +1,4 @@
-# oo7 Suite
+# Spycraft Suite
 
 [![Build Status](https://travis-ci.org/paritytech/oo7.svg?branch=master)](https://travis-ci.org/paritytech/oo7)
 
