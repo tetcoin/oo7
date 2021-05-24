@@ -1,70 +1,70 @@
 # Spycraft Suite
 
-[![Build Status](https://travis-ci.org/paritytech/oo7.svg?branch=master)](https://travis-ci.org/paritytech/oo7)
+[![Build Status](https://travis-ci.org/paritytech/spycraft.svg?branch=master)](https://travis-ci.org/paritytech/spycraft)
 
-[![npm:oo7](https://img.shields.io/npm/v/oo7.svg)](https://www.npmjs.com/package/oo7)
-[![npm:oo7-parity](https://img.shields.io/npm/v/oo7-parity.svg)](https://www.npmjs.com/package/oo7-parity)
-[![npm:oo7-react](https://img.shields.io/npm/v/oo7-react.svg)](https://www.npmjs.com/package/oo7-react)
+[![npm:spycraft](https://img.shields.io/npm/v/spycraft.svg)](https://www.npmjs.com/package/spycraft)
+[![npm:spycraft-tetsy](https://img.shields.io/npm/v/spycraft-tetsy.svg)](https://www.npmjs.com/package/spycraft-tetsy)
+[![npm:spycraft-react](https://img.shields.io/npm/v/spycraft-react.svg)](https://www.npmjs.com/package/spycraft-react)
 
 
-The `oo7` suite consists of three independent packages:
+The `spycraft` suite consists of three independent packages:
 
-- [oo7](./packages/oo7/) - Reactive Bonds
-- [oo7-parity](./packages/oo7-parity) - Bonds bindings for Ethereum objects
-- [oo7-react](./packages/oo7-react) - React components to display Bonds
+- [spycraft](./packages/spycraft/) - Reactive Spooks
+- [spycraft-tetsy](./packages/spycraft-tetsy) - Spooks bindings for Ethereum objects
+- [spycraft-react](./packages/spycraft-react) - React components to display Spooks
 
 # Documentation
 
-[Documentation](https://paritytech.github.io/oo7/class/packages/oo7-parity/src/index.js~Bonds.html#instance-member-accounts) to all three packages can be found [here](https://paritytech.github.io/oo7/)
+[Documentation](https://paritytech.github.io/spycraft/class/packages/spycraft-tetsy/src/index.js~Spooks.html#instance-member-accounts) to all three packages can be found [here](https://paritytech.github.io/spycraft/)
 
 # Examples
 
-### oo7
+### spycraft
 ```js
-// npm i oo7
-import {TimeBond} from 'oo7'
+// npm i spycraft
+import {TimeSpook} from 'spycraft'
 
 
-// Initialize the bond
-const bond = new TimeBond()
-bond
+// Initialize the spook
+const spook = new TimeSpook()
+spook
     .map(t => new Date(t))
     .tie(date => console.log(`${date}`))
     // Wed Oct 11 2017 12:14:56 GMT+0200 (CEST)
 
 ```
 
-### oo7-parity
+### spycraft-tetsy
 ```js
-// npm i oo7-parity
-import {Bonds, formatBalance} from 'oo7-parity'
+// npm i spycraft-tetsy
+import {Spooks, formatBalance} from 'spycraft-tetsy'
 
-const bonds = Bonds()
+const spooks = Spooks()
 
-bonds.balance(bonds.me)
+spooks.balance(spooks.me)
     .map(formatBalance)
     .tie(console.log) // 4.45 ETH
 ```
 
-### oo7-react
+### spycraft-react
 ```js
 import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
 
 // Import reactive element
-import {Rspan} from 'oo7-react'
-import {Bonds, formatBalance} from 'oo7-parity'
+import {Rspan} from 'spycraft-react'
+import {Spooks, formatBalance} from 'spycraft-tetsy'
 
-const bonds = new Bonds()
+const spooks = new Spooks()
 
 class App extends Component {
   render() {
-    // Simply render bonds
+    // Simply render spooks
     return (
       <div>
           <Rspan>
-            {bonds.me} has 
-            {bonds.balance(bonds.me).map(formatBalance)}
+            {spooks.me} has 
+            {spooks.balance(spooks.me).map(formatBalance)}
           </Rspan>
       </div>
     );
